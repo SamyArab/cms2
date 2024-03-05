@@ -9,6 +9,7 @@ import {
 import supabase from "../../config/supabaseClient";
 import { useState, useEffect } from "react";
 import Header from "../../components/layout/Header";
+import { useRouter } from "next/router";
 
 import {
   Typography,
@@ -27,7 +28,7 @@ import {
   TableCell,
   TableBody,
 } from "@mui/material";
-import "../../styles/profileCss.css";
+import "../../styles/profile.css";
 
 const {
   data: { user },
@@ -78,6 +79,8 @@ const ProfilePage = () => {
   //   navigate(path);
   // };
 
+  const router = useRouter();
+
   return (
     <>
       <Header></Header>
@@ -119,7 +122,7 @@ const ProfilePage = () => {
                     variant="contained"
                     color="error"
                     onClick={async function signOutUser() {
-                      window.location.href = "/";
+                      router.push("/dashboard");
                       const { error } = await supabase.auth.signOut();
                       if (error) {
                         console.error("Error signing out:", error.message);
@@ -207,6 +210,61 @@ const ProfilePage = () => {
                     </TableBody>
                   </Table>
                 </TableContainer>
+
+                {/* <TableContainer>
+                  <Table className="payment-table"></Table>
+                </TableContainer> */}
+              </Box>
+            </Grid>
+
+            <Grid item xs={12}>
+              <Box className="payment-box">
+                <Typography className="payment-title" gutterBottom>
+                  Features
+                </Typography>
+                <TableContainer>
+                  <Table className="payment-table">
+                    <TableBody>
+                      <TableRow>
+                        <TableCell>
+                          <Button
+                            className="button"
+                            variant="contained"
+                            color="primary"
+                            onClick={() => router.push("/units")}
+                          >
+                            Units
+                          </Button>
+                        </TableCell>
+
+                        <TableCell>
+                          <Button
+                            className="button"
+                            variant="contained"
+                            color="primary"
+                            onClick={() => router.push("/dashboard")}
+                          >
+                            Dashboard
+                          </Button>
+                        </TableCell>
+                        <TableCell>
+                          <Button
+                            className="button"
+                            variant="contained"
+                            color="primary"
+                            onClick={() => router.push("/reservation")}
+                          >
+                            Reservations
+                          </Button>
+                        </TableCell>
+                      </TableRow>
+                    </TableBody>
+                  </Table>
+                </TableContainer>
+
+                {/* <TableContainer>
+                  <Table className="payment-table"></Table>
+                </TableContainer> */}
               </Box>
             </Grid>
           </Grid>

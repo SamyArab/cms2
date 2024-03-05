@@ -2,6 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import supabase from "../../config/supabaseClient";
+import { useRouter } from "next/router";
 
 //MUI IMPORTS
 import Avatar from "@mui/material/Avatar";
@@ -42,6 +43,7 @@ export default function SignInSide() {
   // Ricky: Added login validation with supabase (redirects to profile if valid, alert if not)
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const router = useRouter();
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
@@ -53,7 +55,8 @@ export default function SignInSide() {
         throw error;
       }
       console.log("User logged in succesfully:", data);
-      routeChange();
+      // routeChange();
+      () => router.push("/profile");
     } catch (error) {
       // Old code from before
       //   const data = new FormData(event.currentTarget);
@@ -148,7 +151,7 @@ export default function SignInSide() {
                 type="submit"
                 fullWidth
                 variant="contained"
-                // onClick={routeChange}
+                onClick={() => router.push("/profile")}
                 sx={{ mt: 3, mb: 2 }}
               >
                 Sign In

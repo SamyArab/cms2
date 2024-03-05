@@ -99,17 +99,18 @@ const SignUp = () => {
       }
 
       console.log("User signed up successfully:", data);
-      routeChange();
+      <Link href="/"></Link>;
+      // routeChange();
     } catch (error) {
       console.error("Error signing up:", error.message);
     }
   };
 
-  const routeChange = () => {
-    let path = "/profile";
-    console.log("Navigating to:", path);
-    // Implement navigation logic here
-  };
+  // const routeChange = () => {
+  //   let path = "/profile";
+  //   console.log("Navigating to:", path);
+  //   // Implement navigation logic here
+  // };
 
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -199,7 +200,7 @@ const SignUp = () => {
               type="submit"
               fullWidth
               variant="contained"
-              // onClick={routeChange}
+              onClick={() => router.push("/profile")}
               sx={{ mt: 3, mb: 2 }}
             >
               Sign Up
