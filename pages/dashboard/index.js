@@ -25,6 +25,7 @@ import ListItemText from "@mui/material/ListItemText";
 import AddIcon from "@mui/icons-material/Add";
 import PropertyIcon from "@mui/icons-material/Category";
 import { useNavigate } from "react-router-dom";
+import Image from "next/image";
 
 function Copyright(props) {
   return (
@@ -219,7 +220,7 @@ export default function Dashboard() {
                   }}
                 >
                   {/* Property Picture */}
-                  <img
+                  <Image
                     src="/property1.jpg"
                     alt="property1"
                     style={{ width: "100%", marginBottom: "1rem" }}
@@ -263,7 +264,7 @@ export default function Dashboard() {
                   <div style={{ marginTop: "2rem" }}>
                     {/* Your graph component */}
                     {/* Replace this with your actual graph component */}
-                    <img
+                    <Image
                       src="/payment_graph.png"
                       alt="Payment Graph"
                       style={{ width: "100%" }}
