@@ -46,11 +46,13 @@ const AppBar = styled(MuiAppBar, {
   }),
 }));
 
+// eslint-disable-next-line react/display-name
 const CustomInput = forwardRef(({ value, onClick }, ref) => (
   <button className="date-picker-button" onClick={onClick} ref={ref}>
     {value} <FaCalendarAlt />
   </button>
 ));
+// ReservationPage.displayName = "ReservationPage";
 
 const facilities = [
   {
@@ -253,6 +255,7 @@ const ReservationPage = () => {
               <Grid item xs={12} md={4} lg={15}>
                 {facilities.map((facility) => (
                   <Paper
+                    key={facility.id}
                     sx={{
                       p: 2,
                       display: "flex",
