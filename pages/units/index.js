@@ -24,7 +24,7 @@ import {
   TableCell,
   TableBody,
 } from "@mui/material";
-import "../../styles/units.css";
+import "../../styles/units.module.css";
 
 const unitsList = {
   units: [
@@ -159,7 +159,7 @@ const CMCUnits = () => {
 
   return (
     <>
-      <Header></Header>
+      {/* <Header></Header> */}
       <Box className="outside-container">
         <Container className="units-container" maxWidth="sm">
           <Grid container spacing={2}>

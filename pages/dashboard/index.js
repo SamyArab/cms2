@@ -254,7 +254,7 @@ export default function Dashboard() {
                     Remaining Balance: $84,500
                   </Typography>
                   <Typography variant="body1" gutterBottom>
-                    Next Month's Payment: $2,347.22
+                    Next Month&apos;s Payment: $2,347.22
                   </Typography>
                   <Typography variant="body1" gutterBottom>
                     Will be taken on February 14th, 2023.

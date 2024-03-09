@@ -28,7 +28,7 @@ import {
   TableCell,
   TableBody,
 } from "@mui/material";
-import "../../styles/profile.css";
+import "../../styles/profile.module.css";
 
 const {
   data: { user },

@@ -24,7 +24,7 @@ import RoofTopDeck from "../../public/rooftop_deck.jpeg";
 import SpaRoom from "../../public/sparoom.jpg";
 
 import { useRouter } from "next/router";
-import "../../styles/reservation.css";
+import "../../styles/reservation.module.css";
 
 const drawerWidth = 240;
 
